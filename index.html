@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creation Web</title>
+    <link rel="stylesheet" href="creation-web-style.css">
+</head>
+<body>
+<div id="ContentWrapper">
+    <h2>Creation Web</h2>
+    <div id="FileInputWrapper">
+        <label for="ImportInput" id="ImportInputLabel">Choose File</label>
+        <input type="file" id="ImportInput" accept="application/json">
+    </div>
+    <input type="text" placeholder="Title..." id="TitleBox">
+    <input type="text" placeholder="Image File Path..." id="ImageFileNameBox" value="./image/" style="display: none">
+    <textarea type="" placeholder="Description..." id="DescriptionBox"></textarea>
+    <select name="type" id="TypeSelect">
+        <option value="Web">Web</option>
+        <option value="Python">Python</option>
+    </select>
+    <input type="date" id="StartDateBox">
+    <input type="date" id="EndDateBox">
+    <input type="url" placeholder="Github Link..." id="GithubURLBox">
+    <input type="url" placeholder="Live Demo Link..." id="LiveDemoURLBox">
+    <select name="status" id="StatusSelect">
+        <option value="Active">Active</option>
+        <option value="Completed">Completed</option>
+        <option value="Planned">Planned</option>
+        <option value="In Work">In Work</option>
+        <option value="Not Finished">Not Finished</option>
+        <option value="Abandoned">Abandoned</option>
+    </select>
+    <select name="visibility" id="VisibilitySelect">
+        <option value="Public">Public</option>
+        <option value="Private">Private</option>
+    </select>
+
+    <!-- Tech Input Wrapper -->
+    <div id="TechInputWrapper">
+        <div id="DefaultTechInputWrapper" class="TechSingleInputWrapper">
+            <input type="text" placeholder="Tech..." class="TechInput" id="DefaultTechInput">
+            <button onclick="AddNewTechField('')" id="TechInputButton">Add New Field</button>
+        </div>
+    </div>
+
+    <!-- Tech Bar Input Wrapper -->
+    <div id="TechBarInputWrapper">
+        <div id="DefaultTechBarInputWrapper" class="TechBarInputWrapper">
+            <input type="text" placeholder="Techbar Name..." class="TechBarNameInput" id="DefaultTechBarNameInput">
+            <input type="number" placeholder="0" min="0" max="100" class="TechBarNumberInput" id="DefaultTechBarNumberInput">
+            <button onclick="AddNewTechBarField('')" id="TechBarInputButton">Add New Field</button>
+        </div>
+    </div>
+
+    <div id="Download-Menu">
+        <input type="text" placeholder="File Name..." id="FileNameBox">
+        <button onclick="Download()" id="DownloadButton">Download</button>
+    </div>
+</div>
+
+<script src="creation-web-main.js"></script>
+</body>
+</html>

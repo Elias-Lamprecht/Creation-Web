@@ -1,0 +1,237 @@
+:root {
+    --main_bg: #1e1f26;
+    --text_color: #e0e0e0;
+    --unchecked_color: #4a6fa5;
+    --checked_color: #6c5dd3;
+    --wall_color: #2d2f36;
+    --path_color: #d4a941;
+    --start_color: #3e8e41;
+    --goal_color: #cc6e30;
+    --input_bg: var(--wall_color);
+    --input_bg_focus: #383c4a;
+    --input_border: var(--unchecked_color);
+    --input_border_focus: var(--checked_color);
+    --button_bg: var(--unchecked_color);
+    --button_bg_hover: var(--checked_color);
+    --button_text: var(--text_color);
+    --button_border: var(--unchecked_color);
+    --button_border_hover: var(--checked_color);
+    --button_shadow_hover: rgba(108, 93, 211, 0.5);
+}
+
+body {
+    background-color: var(--main_bg);
+    color: var(--text_color);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+    user-select: none;
+}
+
+#ContentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    font-family: inherit;
+    font-size: 1rem;
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1.5px solid var(--input_border);
+    background-color: var(--input_bg);
+    color: var(--text_color);
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+    outline: none;
+}
+
+textarea {
+    height: 100px;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--input_border_focus);
+    box-shadow: 0 0 6px var(--input_border_focus);
+    background-color: var(--input_bg_focus);
+}
+
+button {
+    width: 100%;
+    border: 2px solid var(--button_border);
+    background-color: var(--button_bg);
+    color: var(--button_text);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+button:hover,
+button:focus {
+    background-color: var(--button_bg_hover);
+    border-color: var(--button_border_hover);
+    box-shadow: 0 0 8px var(--button_shadow_hover);
+    outline: none;
+}
+
+button:active {
+    background-color: var(--button_border_hover);
+    border-color: var(--button_border_hover);
+    box-shadow: none;
+}
+
+/* Tech Input Wrapper (Horizontal Layout) */
+#TechInputWrapper,
+#TechBarInputWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;  /* Allows the inputs and button to wrap if needed */
+}
+
+/* Tech Inputs */
+.TechBarNameInput,
+.TechBarNumberInput,
+.TechInput {
+    width: 150px; /* Limit the width for each input */
+    margin-right: 10px; /* Space between inputs */
+}
+
+#DeleteTechBarInputButton {
+    border: 2px solid var(--button_border);
+    background-color: var(--button_bg);
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+    border-radius: 6px;
+    align-self: center;
+}
+
+/* Button size adjustments */
+#TechInputButton {
+    align-self: flex-start; /* Align the button next to the inputs */
+    margin-top: 0;  /* No margin, align with inputs */
+}
+
+#TechBarInputButton {
+    align-self: flex-start; /* Align the button next to the inputs */
+    margin-top: 0;  /* No margin, align with inputs */
+}
+
+#TechBarInputWrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#TechInputWrapper {
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px) {
+    #TechInputWrapper,
+    #TechBarInputWrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #TechInputButton,
+    #TechBarInputButton {
+        width: 100%;
+    }
+}
+
+.TechBarInputWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.TechSingleInputWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.TechBarSingleInputWrapper {
+    width: 100%;
+}
+
+.TechBarInputWrapper {
+    width: 100%;
+}
+
+#Download-Menu {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+}
+#FileNameBox {
+    margin-right: 10px;
+}
+
+#FileInputWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* match your form width */
+}
+
+#ImportInput {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 38px; /* same height as inputs */
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#ImportInputLabel {
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1.5px solid var(--input_border);
+    background-color: var(--input_bg);
+    color: var(--text_color);
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+    user-select: none;
+}
+
+#ImportInput:focus + #ImportInputLabel,
+#ImportInputLabel:hover {
+    border-color: var(--input_border_focus);
+    box-shadow: 0 0 6px var(--input_border_focus);
+    background-color: var(--input_bg_focus);
+}
